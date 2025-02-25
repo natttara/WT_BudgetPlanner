@@ -1,12 +1,12 @@
 const CACHE_NAME = 'budget-planner-pwa-cache-v1';
 const FILES_TO_CACHE = [
- '/YOUR-REPOSITORY-NAME/',
- '/YOUR-REPOSITORY-NAME /index.html',
- '/YOUR-REPOSITORY-NAME /style.css',
- '/YOUR-REPOSITORY-NAME /app.js',
- '/YOUR-REPOSITORY-NAME /manifest.json',
- '/YOUR-REPOSITORY-NAME /icons/icon-128.png',
- '/YOUR-REPOSITORY-NAME /icons/icon-512.png'
+ '/WT_BudgetPlanner/',
+ '/WT_BudgetPlanner/index.html',
+ '/WT_BudgetPlanner/style.css',
+ '/WT_BudgetPlanner/app.js',
+ '/WT_BudgetPlanner/manifest.json',
+ '/WT_BudgetPlanner/icons/icon-128.png',
+ '/WT_BudgetPlanner/icons/icon-512.png'
 ];
 self.addEventListener('install', (event) => {
  event.waitUntil(

@@ -1,3 +1,4 @@
+import { initializeApp } from 'firebase/app';
 import { db } from './firebase.js';
 import { collection, addDoc, updateDoc, getDocs, deleteDoc, doc, onSnapshot } from 'firebase/firestore';
 
@@ -147,12 +148,17 @@ function sanitizeInput(input) {
 }
 
 // Service Worker Registration
-const sw = new URL('service-worker.js', import.meta.url);
+const sw = new URL('service-worker.js', import.meta.url)
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register(sw.href, { scope: '/BudgetPlanner-WT/' })
-        .then(() => console.log('Service Worker Registered'))
-        .catch((err) => console.error('Service Worker Error:', err));
+ const s = navigator.serviceWorker;
+ s.register(sw.href, {
+ scope: '/WT_BudgetPlanner/'
+ })
+ .then(_ => console.log('Service Worker Registered for scope:', sw.href,
+'with', import.meta.url))
+ .catch(err => console.error('Service Worker Error:', err));
 }
+
 
 // Initialize App
 renderTransactions();
